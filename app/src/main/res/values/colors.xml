@@ -7,4 +7,23 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="btn">#5D56F3</color>
+    <color name="border">#9D9D9D</color>
+    <color name="text">#4037D2</color>
+    <color name="error">#F0635A</color>
+    <color name="backgroundError">#FDE8E9</color>
+    <color name="navBarHome">#302ABA</color>
+    <color name="navBarHomeLight">#564FFD</color>
+    <color name="search">#5D56F3</color>
+    <color name="textSearch">#A29EF0</color>
+    <color name="btnToday">#29D697</color>
+    <color name="btnTomorrow">#F59762</color>
+    <color name="textHome">#303030</color>
+    <color name="btnAddEvent">#6C66FE</color>
+    <color name="borderBottomNav">#F5F5F5</color>
+    <color name="background">#FCFCFC</color>
+    <color name="exit">#F0F2F5</color>
+    <color name="viewMore">#4037D2</color>
 </resources>

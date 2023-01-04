@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text">Simple, Fast, Powerful, Secure.</string>
+    <string name="text1">Your privacy is our first priority.</string>
+    <string name="textContExist">Already have an account? </string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+
+    <!-- Strings related to login and register-->
+
+    <string name="textEmail">Email address</string>
+    <string name="textParola">Password</string>
+    <string name="textSignIn">LOG IN TO ACCOUNT</string>
+    <string name="textCont">Don\'t have an account?</string>
+    <string name="textName">Name</string>
+    <string name="textConfParola">Confirm your password</string>
+    <string name="textSignUp">CREATE ACCOUNT</string>
+
+    <!--Strings related to errors-->
+
+    <string name="textErroName">Name is required!</string>
+    <string name="textErroEmail">Email is required!</string>
+    <string name="textErroEmailCharacters">You entered an invalid email address!</string>
+    <string name="textErroPassword">Password is required!</string>
+    <string name="textErroPasswordLength">Password must be at least 8 characters long!</string>
+    <string name="textErroPasswordCharacters">Password too weak!</string>
+    <string name="textErroConfPassword">Password confirmation is required!</string>
+    <string name="textErroConfPasswordIdentical">The password does not match!</string>
+
+
 </resources>

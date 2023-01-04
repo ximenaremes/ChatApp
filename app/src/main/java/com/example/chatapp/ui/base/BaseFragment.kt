@@ -1,4 +1,6 @@
 package com.example.chatapp.ui.base
 
-class BaseFragment {
+import androidx.fragment.app.Fragment
+
+open class BaseFragment : Fragment() {
 }
