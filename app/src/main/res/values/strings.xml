@@ -18,5 +18,16 @@
     <string name="textConfParola">Confirm your password</string>
     <string name="textSignUp">CREATE ACCOUNT</string>
 
+    <!--Strings related to errors-->
+
+    <string name="textErroName">Name is required!</string>
+    <string name="textErroEmail">Email is required!</string>
+    <string name="textErroEmailCharacters">You entered an invalid email address!</string>
+    <string name="textErroPassword">Password is required!</string>
+    <string name="textErroPasswordLength">Password must be at least 8 characters long!</string>
+    <string name="textErroPasswordCharacters">Password too weak!</string>
+    <string name="textErroConfPassword">Password confirmation is required!</string>
+    <string name="textErroConfPasswordIdentical">The password does not match!</string>
+
 
 </resources>

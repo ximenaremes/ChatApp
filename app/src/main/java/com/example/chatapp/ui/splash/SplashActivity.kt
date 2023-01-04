@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import com.example.chatapp.ui.base.BaseActivity
-import com.example.chatapp.ui.login.OnboardingActivity
+import com.example.chatapp.ui.login.activity.OnboardingActivity
 
 
 @SuppressLint("CustomSplashScreen")

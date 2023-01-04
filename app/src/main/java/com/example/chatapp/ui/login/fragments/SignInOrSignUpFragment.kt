@@ -1,4 +1,4 @@
-package com.example.chatapp.ui.login
+package com.example.chatapp.ui.login.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
