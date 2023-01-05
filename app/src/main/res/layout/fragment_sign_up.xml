@@ -305,7 +305,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/btn_sign_up"
+        android:background="@drawable/btn"
         android:text="@string/textSignUp"
         android:textStyle="bold"
         android:textColor="@color/white"

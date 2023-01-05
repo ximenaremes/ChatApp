@@ -40,11 +40,12 @@ class SignInFragment : BaseFragment() {
     private fun setClickListener(view: View) {
 
         binding.btnLogin.setOnClickListener{
-            validateInputs()
+            validateInputs(view)
         }
 
         binding.textRegister.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_signUpFragment)
+//            Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_signUpFragment)
+            Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_homeActivity)
         }
 
     }
@@ -54,7 +55,7 @@ class SignInFragment : BaseFragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)[SignInFragmentViewModel::class.java]
     }
 
-    private fun validateInputs() {
+    private fun validateInputs(view: View) {
 
         when (viewModel.validation(
 
@@ -88,7 +89,7 @@ class SignInFragment : BaseFragment() {
             }
             Constants.DEFAULT -> {
                 changeErrorsVisibility()
-//                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_nav_home)
+                Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_homeActivity)
             }
         }
     }

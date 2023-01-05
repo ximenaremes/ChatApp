@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.home.activity.HomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.login.activity.OnboardingActivity"
             android:exported="false">
@@ -20,7 +26,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
@@ -43,7 +48,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ui.base.BaseActivity"
             android:exported="false">
@@ -51,7 +55,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".ui.base.BaseFragment"
             android:exported="false">

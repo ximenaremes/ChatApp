@@ -23,7 +23,7 @@
     <color name="textHome">#303030</color>
     <color name="btnAddEvent">#6C66FE</color>
     <color name="borderBottomNav">#F5F5F5</color>
-    <color name="background">#FCFCFC</color>
+    <color name="background">#F3F3F0F0</color>
     <color name="exit">#F0F2F5</color>
     <color name="viewMore">#4037D2</color>
 </resources>
