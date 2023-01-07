@@ -30,7 +30,7 @@
     <string name="textErroConfPasswordIdentical">The password does not match!</string>
 
     <!-- Strings related to welcome page-->
-    <string name="description">Enjoy the new experience of chating with global friends</string>
+    <string name="description">Enjoy the new experience of chatting with global friends</string>
     <string name="description2">Connect people around the world for free</string>
     <string name="textBtn">Get Started</string>
     <string name="textChat">Powered by</string>
@@ -44,6 +44,14 @@
     <string name="time"> 09:34 PM</string>
     <string name="status">Online</string>
     <string name="sendMessage" tools:ignore="TypographyEllipsis">Type here...</string>
+
+    <!-- Strings related to settings page-->
+
+    <string name="textSettings">Profile</string>
+    <string name="textSignOut">Sign Out</string>
+    <string name="textEmailUser">Email</string>
+
+
 
 
    </resources>

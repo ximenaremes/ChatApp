@@ -11,13 +11,16 @@ import com.example.chatapp.databinding.FragmentSignUpBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.login.viewModel.SignUpFragmentViewModel
 import com.example.chatapp.utils.Constants
+import com.example.chatapp.utils.Container
 import com.example.chatapp.utils.ErrorMessage
+import com.example.chatapp.utils.MyApplication
 
 
 class SignUpFragment : BaseFragment() {
 
     lateinit var binding: FragmentSignUpBinding
     lateinit var viewModel: SignUpFragmentViewModel
+    private lateinit var appContainer : Container
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +32,8 @@ class SignUpFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        appContainer=(requireActivity().application as MyApplication).myContainer
 
         initViewModel()
         checkFocusableInputName()
@@ -51,7 +56,7 @@ class SignUpFragment : BaseFragment() {
     }
     private fun initViewModel() {
         val viewModelFactory: SignUpFragmentViewModel.SignUpFragmentViewModelFactory =
-            SignUpFragmentViewModel.SignUpFragmentViewModelFactory()
+            SignUpFragmentViewModel.SignUpFragmentViewModelFactory(appContainer.userRepositoryImpl)
         viewModel = ViewModelProvider(this, viewModelFactory)[SignUpFragmentViewModel::class.java]
     }
 
@@ -153,6 +158,10 @@ class SignUpFragment : BaseFragment() {
             }
             Constants.DEFAULT -> {
                 changeErrorsVisibility()
+                viewModel.registerUser(
+                    binding.textName.text.toString(),
+                    binding.textEmail.text.toString() ,
+                    binding.textPassword.text.toString() )
                 Navigation.findNavController(view).navigate(R.id.action_signUpFragment_to_homeActivity)
             }
 
