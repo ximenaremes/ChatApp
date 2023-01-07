@@ -18,7 +18,8 @@ class UserRepositoryImpl(
     override suspend fun registerUserToFirebaseAuth(name: String, email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
 
-            .addOnCanceledListener {
+            .addOnCompleteListener {
+                Log.d(TAG, "Succes add user to firebase database")
                 this.addUserToFirebaseDatabase(name, email, firebaseAuth.currentUser!!.uid)
             }
     }

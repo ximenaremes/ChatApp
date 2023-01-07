@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.chatapp.R
 import com.example.chatapp.data.User
 import com.example.chatapp.databinding.FragmentChatBinding
 import com.example.chatapp.ui.base.BaseFragment
@@ -49,7 +51,12 @@ class ChatFragment : BaseFragment() {
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         userList = ArrayList()
         binding.recyclerViewChat.layoutManager = layoutManager
-        adapter = RecyclerAdapterContacts(this, userList)
+        adapter = RecyclerAdapterContacts(this, userList) {
+            view?.let { it1 ->
+                Navigation.findNavController(it1)
+                    .navigate(R.id.action_chatFragment_to_messageFragment)
+            }
+        }
         binding.recyclerViewChat.adapter = adapter
         addUserToAdapter()
     }
