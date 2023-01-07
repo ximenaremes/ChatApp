@@ -44,11 +44,6 @@ class RecyclerAdapterContacts(
 
         holder.itemView.setOnClickListener {
             selectedItemChat.invoke(currentUser)
-//            Navigation.findNavController(view).navigate(R.id.action_chatFragment_to_messageFragment)
-//            val i = Intent(context.requireActivity(), MessageFragment::class.java)
-//            i.putExtra("name",currentUser.name)
-//            i.putExtra("uid",currentUser.uid)
-//            context.startActivity(i)
         }
 //        holder.itemMessage.text= message[position]
 //        holder.itemTime.text= time[position]
