@@ -5,19 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import com.example.chatapp.R
 import com.example.chatapp.databinding.FragmentSignInBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.login.viewModel.SignInFragmentViewModel
 import com.example.chatapp.utils.Constants
+import com.example.chatapp.utils.Container
 import com.example.chatapp.utils.ErrorMessage
+import com.example.chatapp.utils.MyApplication
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SignInFragment : BaseFragment() {
 
     lateinit var binding: FragmentSignInBinding
     lateinit var viewModel: SignInFragmentViewModel
+    private lateinit var appContainer : Container
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,32 +33,34 @@ class SignInFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        appContainer=(requireActivity().application as MyApplication).myContainer
         initViewModel()
         checkFocusableInputEmail()
         checkFocusableInputPassword()
         setClickListener(view)
+//        initObservers()
 
     }
 
     private fun setClickListener(view: View) {
 
         binding.btnLogin.setOnClickListener{
-            validateInputs()
+            validateInputs(view)
         }
 
         binding.textRegister.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_signInFragment_to_signUpFragment)
+            findNavController(view).navigate(R.id.action_signInFragment_to_signUpFragment)
+//            findNavController(view).navigate(R.id.action_signInFragment_to_homeActivity)
         }
 
     }
     private fun initViewModel() {
         val viewModelFactory: SignInFragmentViewModel.SignInFragmentViewModelFactory =
-            SignInFragmentViewModel.SignInFragmentViewModelFactory()
+            SignInFragmentViewModel.SignInFragmentViewModelFactory(appContainer.userRepositoryImpl)
         viewModel = ViewModelProvider(this, viewModelFactory)[SignInFragmentViewModel::class.java]
     }
 
-    private fun validateInputs() {
+    private fun validateInputs(view: View) {
 
         when (viewModel.validation(
 
@@ -88,10 +94,26 @@ class SignInFragment : BaseFragment() {
             }
             Constants.DEFAULT -> {
                 changeErrorsVisibility()
-//                Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_nav_home)
+                viewModel.loginUser(
+                    binding.textEmail.text.toString(),
+                    binding.textPassword.text.toString() )
+                findNavController(view).navigate(R.id.action_signInFragment_to_homeActivity)
+
             }
         }
     }
+
+
+
+//    private fun initObservers() {
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                viewModel.viewState.collect {
+//                    findNavController().navigate(R.id.action_signInFragment_to_homeActivity)
+//                }
+//            }
+//        }
+//    }
 
     private fun checkFocusableInputEmail() {
 
@@ -143,3 +165,5 @@ class SignInFragment : BaseFragment() {
 
 
 }
+
+

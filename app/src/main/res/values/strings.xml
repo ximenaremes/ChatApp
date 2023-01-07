@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ChatApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -29,5 +29,29 @@
     <string name="textErroConfPassword">Password confirmation is required!</string>
     <string name="textErroConfPasswordIdentical">The password does not match!</string>
 
+    <!-- Strings related to welcome page-->
+    <string name="description">Enjoy the new experience of chatting with global friends</string>
+    <string name="description2">Connect people around the world for free</string>
+    <string name="textBtn">Get Started</string>
+    <string name="textChat">Powered by</string>
 
-</resources>
+    <!-- Strings related to chat page-->
+
+    <string name="searchMessage">Search message..</string>
+    <string name="textMessage">Messages</string>
+    <string name="textNameUser">Name</string>
+    <string name="textMessageUser">This is a first message</string>
+    <string name="time"> 09:34 PM</string>
+    <string name="status">Online</string>
+    <string name="sendMessage" tools:ignore="TypographyEllipsis">Type here...</string>
+
+    <!-- Strings related to settings page-->
+
+    <string name="textSettings">Profile</string>
+    <string name="textSignOut">Sign Out</string>
+    <string name="textEmailUser">Email</string>
+
+
+
+
+   </resources>

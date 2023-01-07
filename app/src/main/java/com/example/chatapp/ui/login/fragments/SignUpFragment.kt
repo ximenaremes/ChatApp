@@ -11,13 +11,16 @@ import com.example.chatapp.databinding.FragmentSignUpBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.login.viewModel.SignUpFragmentViewModel
 import com.example.chatapp.utils.Constants
+import com.example.chatapp.utils.Container
 import com.example.chatapp.utils.ErrorMessage
+import com.example.chatapp.utils.MyApplication
 
 
 class SignUpFragment : BaseFragment() {
 
     lateinit var binding: FragmentSignUpBinding
     lateinit var viewModel: SignUpFragmentViewModel
+    private lateinit var appContainer : Container
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,8 @@ class SignUpFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        appContainer=(requireActivity().application as MyApplication).myContainer
+
         initViewModel()
         checkFocusableInputName()
         checkFocusableInputEmail()
@@ -41,7 +46,7 @@ class SignUpFragment : BaseFragment() {
     private fun setClickListener(view: View) {
 
         binding.btnRegister.setOnClickListener{
-            validateInputs()
+            validateInputs(view)
         }
 
         binding.textLogin.setOnClickListener {
@@ -51,11 +56,11 @@ class SignUpFragment : BaseFragment() {
     }
     private fun initViewModel() {
         val viewModelFactory: SignUpFragmentViewModel.SignUpFragmentViewModelFactory =
-            SignUpFragmentViewModel.SignUpFragmentViewModelFactory()
+            SignUpFragmentViewModel.SignUpFragmentViewModelFactory(appContainer.userRepositoryImpl)
         viewModel = ViewModelProvider(this, viewModelFactory)[SignUpFragmentViewModel::class.java]
     }
 
-    private fun validateInputs() {
+    private fun validateInputs(view: View) {
 
         when(viewModel.validation(
 
@@ -153,7 +158,11 @@ class SignUpFragment : BaseFragment() {
             }
             Constants.DEFAULT -> {
                 changeErrorsVisibility()
-//                Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_home2)
+                viewModel.registerUser(
+                    binding.textName.text.toString(),
+                    binding.textEmail.text.toString() ,
+                    binding.textPassword.text.toString() )
+                Navigation.findNavController(view).navigate(R.id.action_signUpFragment_to_homeActivity)
             }
 
         }

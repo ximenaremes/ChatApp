@@ -10,5 +10,8 @@ object Constants {
     const val VALID_PASSWORD_CHARACTERS=6
     const val VALID_CONFIRM_PASSWORD = 7
     const val VALID_CONFIRM_PASSWORD_IDENTICAL = 8
+    const val NAME ="user"
+    const val ITEM_RECEIVE = 1
+    const val ITEM_SENT = 2
 
 }

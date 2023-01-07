@@ -1,4 +1,6 @@
 package com.example.chatapp.ui.base
 
-class BaseViewModel {
+import androidx.lifecycle.ViewModel
+
+open class BaseViewModel : ViewModel() {
 }

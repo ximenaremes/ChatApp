@@ -3,17 +3,28 @@ package com.example.chatapp.ui.login.viewModel
 import android.util.Patterns.EMAIL_ADDRESS
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import com.example.chatapp.data.UserRepositoryImpl
+import com.example.chatapp.data.use_case.RegisterUserUseCase
+import com.example.chatapp.ui.base.BaseViewModel
 import com.example.chatapp.utils.Constants
+import kotlinx.coroutines.launch
 
 
-class SignUpFragmentViewModel() : ViewModel() {
+class SignUpFragmentViewModel(
+    private val userRepositoryImpl: UserRepositoryImpl
+) : BaseViewModel() {
 
-    class SignUpFragmentViewModelFactory() : ViewModelProvider.Factory {
 
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+    private var registerUserUseCase: RegisterUserUseCase = RegisterUserUseCase(userRepositoryImpl)
 
-            return SignUpFragmentViewModel() as T        }
+
+    fun registerUser(name: String, email: String, password: String){
+        viewModelScope.launch {
+            registerUserUseCase.execute(name, email, password)
+        }
     }
+
 
     fun validation(name: String, email: String, password: String, confirmPassword: String): Int {
 
@@ -39,4 +50,13 @@ class SignUpFragmentViewModel() : ViewModel() {
         return Constants.DEFAULT
     }
 
+
+    class SignUpFragmentViewModelFactory(
+        private val userRepositoryImpl:UserRepositoryImpl
+    ) : ViewModelProvider.Factory {
+
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+
+            return SignUpFragmentViewModel(userRepositoryImpl) as T        }
+    }
 }
