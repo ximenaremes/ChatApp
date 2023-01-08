@@ -2,6 +2,7 @@ package com.example.chatapp.ui.home.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +38,6 @@ class ChatFragment : BaseFragment() {
     ): View {
         binding = FragmentChatBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,10 +51,15 @@ class ChatFragment : BaseFragment() {
         layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         userList = ArrayList()
         binding.recyclerViewChat.layoutManager = layoutManager
-        adapter = RecyclerAdapterContacts(this, userList) {
+        adapter = RecyclerAdapterContacts(this, userList) { user ->
+            val bundle = Bundle()
+            Log.d("chat with", "chat with=${user.name}")
+            bundle.putString("ItemChatName", user.name)
+//            bundle.putString("receiverUid", firebaseAuth.currentUser!!.uid)
+            bundle.putString("receiverUid", user.uid)
             view?.let { it1 ->
                 Navigation.findNavController(it1)
-                    .navigate(R.id.action_chatFragment_to_messageFragment)
+                    .navigate(R.id.action_chatFragment_to_messageFragment, bundle)
             }
         }
         binding.recyclerViewChat.adapter = adapter
@@ -77,11 +82,8 @@ class ChatFragment : BaseFragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
             }
-
         })
-
     }
 
     private fun initViewModel() {
