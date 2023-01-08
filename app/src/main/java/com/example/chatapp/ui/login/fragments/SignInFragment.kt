@@ -1,6 +1,8 @@
 package com.example.chatapp.ui.login.fragments
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import com.example.chatapp.databinding.FragmentSignInBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.login.viewModel.SignInFragmentViewModel
 import com.example.chatapp.utils.*
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SignInFragment : BaseFragment() {
@@ -20,6 +23,8 @@ class SignInFragment : BaseFragment() {
     lateinit var viewModel: SignInFragmentViewModel
     private lateinit var appContainer: Container
     private val preferenceRepository: PreferenceRepository by lazy { return@lazy PreferenceFactory.getPreference() }
+    private var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,19 +99,30 @@ class SignInFragment : BaseFragment() {
             }
             Constants.DEFAULT -> {
                 changeErrorsVisibility()
-                viewModel.loginUser(
-                    binding.textEmail.text.toString(),
-                    binding.textPassword.text.toString()
-                )
+//                viewModel.loginUser(
+//                    binding.textEmail.text.toString(),
+//                    binding.textPassword.text.toString()
+//                )
+                login(view)
+            }
+        }
+    }
+
+    private fun login(view: View){
+        firebaseAuth.signInWithEmailAndPassword(binding.textEmail.text.toString(), binding.textPassword.text.toString())
+            .addOnSuccessListener { result ->
+                Log.d(ContentValues.TAG, "Succes to login user")
                 //save user to sharedPrefs
                 preferenceRepository.saveUserEmail(email = binding.textEmail.text.toString())
                 preferenceRepository.saveIsUser(isUser = true)
                 findNavController(view).navigate(R.id.action_signInFragment_to_homeActivity)
 
             }
-        }
+            .addOnFailureListener { exception ->
+                Log.d(ContentValues.TAG, "Error to login user", exception)
+                showError(exception.message.toString())
+            }
     }
-
 
 //    private fun initObservers() {
 //        viewLifecycleOwner.lifecycleScope.launch {
