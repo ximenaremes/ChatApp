@@ -65,4 +65,7 @@ dependencies {
     // SecurePreferences Library
     implementation 'com.scottyab:secure-preferences-lib:0.1.7'
 
+    // Material dialog library
+    implementation 'com.afollestad.material-dialogs:core:3.1.1'
+
 }
