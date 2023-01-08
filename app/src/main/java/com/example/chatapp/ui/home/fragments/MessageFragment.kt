@@ -14,8 +14,8 @@ import com.example.chatapp.databinding.FragmentMessageBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.home.adapter.RecyclerAdapterMessages
 import com.example.chatapp.ui.home.viewModel.MessageFragmentViewModel
+import com.example.chatapp.utils.AppChatApp
 import com.example.chatapp.utils.Container
-import com.example.chatapp.utils.MyApplication
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -45,7 +45,7 @@ class MessageFragment : BaseFragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appContainer=(requireActivity().application as MyApplication).myContainer
+        appContainer=(requireActivity().application as AppChatApp).myContainer
 
         val i = Intent()
         val name = i.getStringExtra("name")

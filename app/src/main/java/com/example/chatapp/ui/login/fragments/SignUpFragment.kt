@@ -10,10 +10,10 @@ import com.example.chatapp.R
 import com.example.chatapp.databinding.FragmentSignUpBinding
 import com.example.chatapp.ui.base.BaseFragment
 import com.example.chatapp.ui.login.viewModel.SignUpFragmentViewModel
+import com.example.chatapp.utils.AppChatApp
 import com.example.chatapp.utils.Constants
 import com.example.chatapp.utils.Container
 import com.example.chatapp.utils.ErrorMessage
-import com.example.chatapp.utils.MyApplication
 
 
 class SignUpFragment : BaseFragment() {
@@ -33,7 +33,7 @@ class SignUpFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appContainer=(requireActivity().application as MyApplication).myContainer
+        appContainer=(requireActivity().application as AppChatApp).myContainer
 
         initViewModel()
         checkFocusableInputName()
