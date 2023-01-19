@@ -16,7 +16,7 @@ typealias OnSelectItemChat = (User) -> Unit
 class RecyclerAdapterContacts(
 
     val context: ChatFragment,
-    val userList: ArrayList<User>,
+    private val userList: ArrayList<User>,
     private val selectedItemChat: OnSelectItemChat
 
 ) : RecyclerView.Adapter<RecyclerAdapterContacts.ViewHolder>() {

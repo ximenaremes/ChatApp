@@ -54,8 +54,8 @@ class MessageFragment : BaseFragment() {
 
         val i = Intent()
         val name = i.getStringExtra("name")
-//        val receiverUid = arguments?.getString("receiverUid")
-        val receiverUid = i.getStringExtra("uid") //some problem with uid here!!!
+        val receiverUid = arguments?.getString("receiverUid")
+//        val receiverUid = i.getStringExtra("uid") //some problem with uid here!!!
         val senderUid = firebaseAuth.currentUser?.uid
 
         senderRoom = receiverUid + senderUid
@@ -93,7 +93,7 @@ class MessageFragment : BaseFragment() {
             firebaseDBRef.child("chats").child(senderRoom!!).child("messages")
                 .push()
                 .setValue(messageObject)
-                .addOnCanceledListener {
+                .addOnSuccessListener {
                     firebaseDBRef.child("chats").child(receiverRoom!!).child("messages")
                         .push()
                         .setValue(messageObject)
