@@ -9,7 +9,6 @@
     <string name="signUp">Sign Up</string>
 
     <!-- Strings related to login and register-->
-
     <string name="textEmail">Email address</string>
     <string name="textParola">Password</string>
     <string name="textSignIn">LOG IN TO ACCOUNT</string>
@@ -19,7 +18,6 @@
     <string name="textSignUp">CREATE ACCOUNT</string>
 
     <!--Strings related to errors-->
-
     <string name="textErroName">Name is required!</string>
     <string name="textErroEmail">Email is required!</string>
     <string name="textErroEmailCharacters">You entered an invalid email address!</string>
@@ -29,14 +27,13 @@
     <string name="textErroConfPassword">Password confirmation is required!</string>
     <string name="textErroConfPasswordIdentical">The password does not match!</string>
 
-    <!-- Strings related to welcome page-->
+    <!-- Strings related to welcome screen-->
     <string name="description">Enjoy the new experience of chatting with global friends</string>
     <string name="description2">Connect people around the world for free</string>
     <string name="textBtn">Get Started</string>
     <string name="textChat">Powered by</string>
 
-    <!-- Strings related to chat page-->
-
+    <!-- Strings related to chat screen-->
     <string name="searchMessage">Search message..</string>
     <string name="textMessage">Messages</string>
     <string name="textNameUser">Name</string>
@@ -45,18 +42,41 @@
     <string name="status">Online</string>
     <string name="sendMessage" tools:ignore="TypographyEllipsis">Type here...</string>
 
-    <!-- Strings related to settings page-->
-
+    <!-- Strings related to settings screen-->
     <string name="textSettings">Profile</string>
     <string name="textSignOut">Sign Out</string>
     <string name="textEmailUser">Email</string>
-
 
     <!-- generals -->
     <string name="popup_title_error">Error</string>
     <string name="popup_action_ok">OK</string>
     <string name="popup_title_info">Info</string>
 
+    <!-- Strings related to Terms and Conditions screen-->
+    <string name="popup_title">Terms and Conditions</string>
+    <string name="popup_text1">By downloading ChatApp you agree to the terms of our End User Licence Agreement. If you do not agree then you must not download ChatApp. We may update the agreement at any time. By using any updated version of ChatApp which we might make available, you accept that the modified terms of this agreement apply to such updated software. This agreement was last updated on 9 January, 2023.</string>
+    <string name="popup_text2">“Service” means access to the Software.</string>
+    <string name="popup_text3">“Software” means the software application known as ChatApp. </string>
+    <string name="popup_text4">“Supplier” refers to our company, known as ChatApp.</string>
+    <string name="popup_text5">“User” means you as the end user accessing the Software through the Services.</string>
+    <string name="popup_text6">“User Content”means any and all User materials,content and data, including text, imagery, videos and/or other files entered, uploaded or submitted to the Service directly or indirectly via any third party application.</string>
+    <string name="popup_text7">“Improvements” means any: (i) information communicated by User to Supplier regarding any new features, functionality, performance, feedback,comments and anything analogous to the same in relation to the Software, and (ii) adaptations, modifications, improvements, enhancements, revisions or interface elements and anything analogous to the same in relation to the Software in any form or medium whatsoever.</string>
+    <string name="popup_text8">“Intellectual Property Rights” means patents,utility models, rights to inventions, copyright and related rights, trade marks and service marks, trade names and domain names, rights in get-up, goodwill and the right to sue for passing off or unfair competition, rights in designs, rights in computer software, database rights, rights to preserve the confidentiality of information (including know-how and trade secrets) and any other intellectual property rights, including all applications for (and rights to apply for and be granted), renewals or extensions of, and rights to claim priority from, such rights and all similar or equivalent rights or forms of protection which subsist or shall subsist, now or in the future, in any part of the world.</string>
+    <string name="popup_text9">Restrictions</string>
+    <string name="popup_text10">The User shall not: (i) attempt to reverse compile,disassemble, reverse engineer or otherwise reduce to human-perceivable form all or any part of the Software (except as may be allowed by any applicable law which is incapable of exclusion by agreement between the parties), (ii) license, sell, resell, transfer, rent,lease, distribute, exploit or otherwise make the Software or Services available to anyone, (iii) use the Software or Services to store or transmit infringing, obscene, libellous, or otherwise unlawful or tortious material, or to store or transmit material in violation of third party privacy rights, (iv) use the Software or the Services to send spam or otherwise duplicative or unsolicited messages in violation of applicable laws, or (v) copy, modify, transmit, distribute, frame or mirror any Software in any form or media or by any means,(vi) use the Software or Services to store or transmit malicious code or in any way that is unlawful or fraudulent, (vii) interfere with, damage or disrupt the integrity or performance of the Software or Services or third party data, (viii) attempt to gain or assist third parties to gain unauthorised access to the Software or Services or their related systems or networks, or (ix)access the Software or Services for purposes of monitoring their availability, performance or functionality, or for any other benchmarking or competitive purposes.</string>
+    <string name="popup_text11">Supplier’s Obligations.</string>
+    <string name="popup_text12">When the Supplier provides the Service to the User it shall do so on and subject to the terms of this Agreement.</string>
+    <string name="popup_text13">The User acknowledges and agrees that the Service will evolve over time and that any and all functionality may be added and removed from time to time, including a complete removal of the Service. Supplier does not warrant that the User’s use of the Service will be uninterrupted or error-free; or that the Service and/or the information obtained by the User through the Service will meet the User’s requirements. Supplier is not responsible for any delays, delivery failures, or any other loss or damage resulting from the transfer of data over communications networks and facilities,including the internet, and the User acknowledges that the Service may be subject to limitations, delays and other problems inherent in the use of such communications facilities.</string>
+    <string name="popup_text14">Intellectual Property Rights and Software Content.</string>
+    <string name="popup_text15">User acknowledges that all Intellectual Property Rights in the Software and the Services belong to Supplier or its licensors, and User shall have no rights in or to the Software other than the licence granted to it under this Agreement. For the avoidance of doubt, any Improvements made to the Software, whether through User’s feedback or by any other means, shall be the sole and exclusive property of Supplier. Any Improvements shall be free from any confidentiality restrictions that might otherwise be imposed upon Supplier.</string>
+    <string name="popup_text16">Supplier makes no representation or warranty as to the validity or enforceability of the Intellectual Property Rights in the Software.</string>
+    <string name="popup_text17">All Intellectual Property Rights in and to the User Content shall belong to, and remain vested, in the User at all times. By uploading any User Content to the Software or displaying any content through the Services, the User grants Supplier a non-exclusive, worldwide, royalty free, sub-licensable licence to reproduce, modify, adapt, copy and publish such content, solely for the purpose of fulfilling its obligations contained within this Agreement and/or to the extent required for proper function and use of the Software by all relevant users in accordance with the Documentation.</string>
+    <string name="popup_text18">User shall have sole responsibility for the legality,reliability, integrity, accuracy and quality of the User Content. Supplier may use the User Content to improve the performance and functionality of the Software or develop improvements, updates,upgrades, modifications and derivative works thereof. Supplier shall own all rights, title and interest in and to all of the Derived Data.</string>
+    <string name="popup_text19">The User acknowledges that Supplier has no control over User Content uploaded to or displayed on the Software by the User or any other user of the Software and does not purport to monitor the content of the Software. The Supplier reserves the right to remove content from the Software where it reasonably suspects such content is in breach of this Agreement or for reasonable cause.</string>
+    <string name="popup_text20">The User shall have sole responsibility for User Content displayed on or uploaded to the Software and shall ensure it has all rights necessary to display such data or content via the Software. The User shall indemnify and hold harmless Supplier from and against all losses, damages, liabilities and claims,arising from or in relation to any third party claims that the processing and use of the User Content in accordance with this Agreement infringes or misappropriates any third party rights.</string>
+    <string name="popup_text21">Privacy Policy</string>
+    <string name="popup_text22">Your privacy is important to us. It is Brainstorming`s policy to respect your privacy regarding any information we may collect from you across our app.We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</string>
+    <string name="popup_text23">If you have any questions or comments about these Terms please contact us at hello@chatapp.com.</string>
+    <string name="popup_text24">Thanks for using our app. </string>
 
-
-   </resources>
+</resources>

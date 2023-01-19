@@ -15,20 +15,19 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RecyclerAdapterMessages(
     val context:MessageFragment,
-    val messageList:ArrayList<Message>
+    private val messageList:ArrayList<Message>
     ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        if (viewType == 1){
+        return if (viewType == 1){
             val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_message_received, parent, false)
-            return ReceiveViewHolder(view)
-        }
-        else{
+            ReceiveViewHolder(view)
+        } else{
             val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_message_send, parent, false)
-            return SentViewHolder(view)
+            SentViewHolder(view)
         }
     }
 
@@ -52,11 +51,10 @@ class RecyclerAdapterMessages(
 
         val currentMessage = messageList[position]
 
-        if (firebaseAuth.currentUser?.uid.equals(currentMessage.senderId)){
-            return Constants.ITEM_SENT
-        }
-        else {
-            return Constants.ITEM_RECEIVE
+        return if (firebaseAuth.currentUser?.uid.equals(currentMessage.senderId)){
+            Constants.ITEM_SENT
+        } else {
+            Constants.ITEM_RECEIVE
         }
 
     }
@@ -64,13 +62,15 @@ class RecyclerAdapterMessages(
     override fun getItemCount(): Int {
        return messageList.size
     }
+
+
     class SentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val sentMessage = itemView.findViewById<TextView>(R.id.messageUserSent)
+        val sentMessage: TextView = itemView.findViewById<TextView>(R.id.messageUserSent)
 
     }
 
     class ReceiveViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val receiveMessage = itemView.findViewById<TextView>(R.id.messageUserReceive)
+        val receiveMessage: TextView = itemView.findViewById<TextView>(R.id.messageUserReceive)
     }
 
 }

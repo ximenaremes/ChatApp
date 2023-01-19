@@ -37,14 +37,11 @@ class SignInOrSignUpFragment : BaseFragment() {
         binding.btnSignUp.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_signInOrSignUpFragment_to_signUpFragment)
         }
-//        binding.imageHelp.setOnClickListener{
-//            Navigation.findNavController(view).navigate(R.layout.)
-//        }
+
+        binding.imageInfo.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id. action_signInOrSignUpFragment_to_popUpFragment)
+
+        }
 
     }
-
-
-
-
-
 }

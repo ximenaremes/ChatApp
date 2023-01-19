@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_signInOrSignUpFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInOrSignUpFragment_to_popUpFragment"
+            app:destination="@id/popUpFragment" />
+        <action
+            android:id="@+id/action_signInOrSignUpFragment_to_popUpFragment2"
+            app:destination="@id/popUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"
@@ -46,4 +52,9 @@
         android:name="com.example.chatapp.ui.home.activity.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/popUpFragment"
+        android:name="com.example.chatapp.ui.login.fragments.PopUpFragment"
+        android:label="fragment_pop_up"
+        tools:layout="@layout/fragment_pop_up" />
 </navigation>

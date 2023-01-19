@@ -21,10 +21,6 @@ class RecyclerAdapterContacts(
 
 ) : RecyclerView.Adapter<RecyclerAdapterContacts.ViewHolder>() {
     private var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-//    private var name= arrayOf("Erik Schmidt","George", "Vecinuta")
-//    private  var message= arrayOf("Erik,nu dormi, vreau sa-ti arat ceva", "Il iubi pe Erik ", "Am terminat aplicatia")
-//    private var time= arrayOf("01:10 AM", "01:07 AM", "01:00 AM")
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View =
